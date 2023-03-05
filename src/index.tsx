@@ -4,7 +4,7 @@
 import 'src/polyfill'
 
 // load firebase
-import 'src/services/firebase'
+// import 'src/services/firebase'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
