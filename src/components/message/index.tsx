@@ -9,5 +9,5 @@ export interface MessageProps {
 }
 
 export const Message: FC<MessageProps> = (props) => {
-  return <STMessage variant="body2-regular" {...props}/>
+  return <STMessage variant="body2" {...props}/>
 }

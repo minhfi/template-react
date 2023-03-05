@@ -2,14 +2,10 @@ import { FC } from 'react'
 import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
 
 import { routes } from 'src/router'
-import { generate } from 'src/router/generate'
 import { StorageUtil } from 'src/utils/storage.util'
-import { EAuthRoutes } from 'src/module/auth/routes.enum'
 import { IRouterOption } from 'src/router/interface'
-import { useAppSelector } from 'src/hooks/redux'
 import { LayoutContainer } from '../layout-container'
 import { AUTH_FALLBACK_KEY } from 'src/constants'
-import { getIsAuthenticated } from 'src/store/selectors/auth'
 
 const AuthRoute: FC<{
   path: string
@@ -17,7 +13,7 @@ const AuthRoute: FC<{
   component: IRouterOption['component']
 }> = (props) => {
   const location = useLocation()
-  const isAuthenticated = useAppSelector(getIsAuthenticated)
+  const isAuthenticated = true
 
   if (isAuthenticated) {
     return (
@@ -30,7 +26,7 @@ const AuthRoute: FC<{
   }
 
   StorageUtil.setItem(AUTH_FALLBACK_KEY, `${location.pathname}${location.search}`)
-  return <Redirect to={generate(EAuthRoutes.SIGN_IN)}/>
+  return <Redirect to="/"/>
 }
 
 const RoutesSwitch = (

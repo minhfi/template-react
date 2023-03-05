@@ -6,7 +6,7 @@ const ButtonBase = styled(Button)<IButtonProps>(({ theme, ...props }) => css`
   width: ${props.width ? props.width + 'px' : 'auto'};
   height: ${props.height}px;
 
-  ${{ ...theme.typography['body2-bold'] }};
+  ${{ ...theme.typography.body1 }};
   
   padding: ${theme.spacing(0, 2)};
   text-transform: unset;
@@ -34,7 +34,7 @@ export const ButtonPrimary = styled(ButtonBase)<IButtonProps>(({ theme, ...props
   }
 
   &:disabled {
-    color: ${theme.colors['--color-neutral-theme-50']} !important;
+    color: ${theme.colors['--color-neutral-theme-100']} !important;
     background-color: ${theme.colors['--color-neutral-theme-200']} !important;
   }
 `)
@@ -43,7 +43,7 @@ export const ButtonSecondary = styled(ButtonBase)<IButtonProps>(({ theme, backgr
   border: 1px solid ${background ? 'transparent' : theme.colors['--color-neutral-theme-300']};
 
   color: ${theme.colors['--color-neutral-theme-700']} !important;
-  background-color: ${background || theme.colors['--color-neutral-theme-50']} !important;
+  background-color: ${background || theme.colors['--color-neutral-theme-100']} !important;
 
   &:hover {
     border: none;

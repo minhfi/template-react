@@ -2,7 +2,6 @@
  * polyfill
  */
 import 'src/polyfill'
-import 'src/utils/axios.config'
 
 // load firebase
 import 'src/services/firebase'

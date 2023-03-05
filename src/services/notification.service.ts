@@ -1,5 +1,4 @@
 import { BehaviorSubject } from 'rxjs'
-import { IUserModel } from 'src/interfaces/models/user.model'
 import { noticesCollection } from './firebase'
 
 export interface IFirebaseNotification {
@@ -10,10 +9,10 @@ export const NotificationService = new (
   class _NotificationService {
     readonly firebaseNotification$ = new BehaviorSubject<IFirebaseNotification>({})
 
-    private userId: IUserModel['id']
+    private userId?: string
     private unsubscribe() {}
 
-    bind(userId: IUserModel['id']) {
+    bind(userId: string) {
       if (this.userId === userId) {
         return this.unbind
       }

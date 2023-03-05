@@ -1,8 +1,5 @@
-import { all, fork } from 'redux-saga/effects'
-import { handler as auth } from './auth'
+import { all } from 'redux-saga/effects'
 
 export const saga = function * () {
-  yield all([
-    fork(auth)
-  ])
+  yield all([])
 }
